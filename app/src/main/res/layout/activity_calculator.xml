@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_blue"
+    tools:context=".CalculatorActivity">
+
+    <TextView
+        android:id="@+id/tv_calc"
+        style="@style/TextView"
+        android:layout_marginTop="32dp"
+        android:text="@string/math_is_mate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_calc_calculation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_calc" />
+
+    <TextView
+        android:id="@+id/tv_calc_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_calc_calculation" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_calc_result">
+
+        <TextView
+            android:id="@+id/clear"
+            style="@style/ActionButtonStyle"
+            android:text="CE" />
+
+
+        <TextView
+            android:id="@+id/startBracket"
+            style="@style/ActionButtonStyle"
+            android:text="(" />
+
+
+        <TextView
+            android:id="@+id/closeBracket"
+            style="@style/ActionButtonStyle"
+            android:text=")" />
+
+
+        <TextView
+            android:id="@+id/actionDivide"
+            style="@style/ActionButtonStyle"
+            android:text="/" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+        <TextView
+            android:id="@+id/mathPow"
+            style="@style/NumberButtonStyle"
+            android:text="7" />
+
+
+        <TextView
+            android:id="@+id/leftBracket"
+            style="@style/NumberButtonStyle"
+            android:text="8" />
+
+
+        <TextView
+            android:id="@+id/rightBracket"
+            style="@style/NumberButtonStyle"
+            android:text="9" />
+
+
+        <TextView
+            android:id="@+id/actionMultiply"
+            style="@style/ActionButtonStyle"
+            android:text="*" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/num7"
+            style="@style/NumberButtonStyle"
+            android:text="7" />
+
+
+        <TextView
+            android:id="@+id/num8"
+            style="@style/NumberButtonStyle"
+            android:text="8" />
+
+
+        <TextView
+            android:id="@+id/num9"
+            style="@style/NumberButtonStyle"
+            android:text="9" />
+
+
+        <TextView
+            android:id="@+id/actionPlus"
+            style="@style/ActionButtonStyle"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/num4"
+            style="@style/NumberButtonStyle"
+            android:text="4" />
+
+
+        <TextView
+            android:id="@+id/num5"
+            style="@style/NumberButtonStyle"
+            android:text="5" />
+
+
+        <TextView
+            android:id="@+id/num6"
+            style="@style/NumberButtonStyle"
+            android:text="6" />
+
+
+        <TextView
+            android:id="@+id/actionMinus"
+            style="@style/ActionButtonStyle"
+            android:text="-" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toStartOf="@+id/actionEquals"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <TextView
+            android:id="@+id/num1"
+            style="@style/NumberButtonStyle"
+            android:text="1" />
+
+
+        <TextView
+            android:id="@+id/num2"
+            style="@style/NumberButtonStyle"
+            android:text="2" />
+
+
+        <TextView
+            android:id="@+id/num3"
+            style="@style/NumberButtonStyle"
+            android:text="3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/actionEquals"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        <TextView
+            android:id="@+id/numDot"
+            style="@style/NumberButtonStyle"
+            android:text="." />
+
+
+        <TextView
+            android:id="@+id/num0"
+            style="@style/NumberButtonStyle"
+            android:text="0" />
+
+
+        <TextView
+            android:id="@+id/actionBack"
+            style="@style/NumberButtonStyle"
+            android:text="Back" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/actionEquals"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/theme_yellow"
+        android:gravity="center"
+        android:text="="
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout4"
+        app:layout_constraintStart_toEndOf="@id/linearLayout5"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

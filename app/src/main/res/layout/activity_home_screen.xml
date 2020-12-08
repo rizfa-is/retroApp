@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_blue"
+    tools:context=".HomeScreenActivity">
+
+    <TextView
+        android:id="@+id/tv_home"
+        style="@style/TextView"
+        android:layout_marginTop="70dp"
+        android:text="@string/welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_home_dice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/shape_bg"
+        android:elevation="2dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_dice"
+        app:layout_constraintEnd_toStartOf="@+id/img_home_calculator"
+        app:layout_constraintStart_toStartOf="@+id/tv_home"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home" />
+
+    <TextView
+        android:id="@+id/tv_home_dice"
+        style="@style/TextView"
+        android:layout_marginTop="16dp"
+        android:text="@string/roll_dice"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/img_home_dice"
+        app:layout_constraintStart_toStartOf="@+id/img_home_dice"
+        app:layout_constraintTop_toBottomOf="@+id/img_home_dice" />
+
+    <ImageView
+        android:id="@+id/img_home_calculator"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/shape_bg"
+        android:elevation="2dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_calculator"
+        app:layout_constraintBottom_toBottomOf="@+id/img_home_dice"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home"
+        app:layout_constraintStart_toEndOf="@+id/img_home_dice" />
+
+    <TextView
+        android:id="@+id/tv_home_calculator"
+        style="@style/TextView"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculator"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/img_home_calculator"
+        app:layout_constraintStart_toStartOf="@+id/img_home_calculator"
+        app:layout_constraintTop_toBottomOf="@+id/img_home_calculator" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

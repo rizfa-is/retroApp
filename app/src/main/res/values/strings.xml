@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Retro App</string>
+    <string name="retro_app">Retro App</string>
+    <string name="welcome">Welcome Back\nChallengers!</string>
+    <string name="roll_dice">Roll Dice</string>
+    <string name="calculator">Calculator</string>
+    <string name="roll">ROLL</string>
+    <string name="feel_like_rolling_stones">Feel like\nRolling Stones!</string>
+    <string name="math_is_mate">Math is Mate</string>
+</resources>
