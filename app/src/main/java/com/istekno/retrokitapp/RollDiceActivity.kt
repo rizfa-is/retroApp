@@ -1,8 +1,8 @@
 package com.istekno.retrokitapp
 
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_roll_dice.*
-import java.util.*
 
 class RollDiceActivity : BaseActivity() {
 
@@ -22,17 +22,16 @@ class RollDiceActivity : BaseActivity() {
     }
 
     private fun rollDice() {
-        val randomNumber = Random().nextInt(6) + 1
-        val imageResources = when (randomNumber) {
-            1 -> R.drawable.img_dice_1
-            2 -> R.drawable.img_dice_2
-            3 -> R.drawable.img_dice_3
-            4 -> R.drawable.img_dice_4
-            5 -> R.drawable.img_dice_5
-            else -> R.drawable.img_dice_6
+        val listNumber = intArrayOf(1, 2, 3, 4, 5, 6)
+        val listDice = intArrayOf(R.drawable.img_dice_1, R.drawable.img_dice_2, R.drawable.img_dice_3, R.drawable.img_dice_4, R.drawable.img_dice_5, R.drawable.img_dice_6)
+        val random = (1..6).random()
+
+        val imageResources = when (random) {
+            in listNumber -> {
+                listDice[listNumber.indexOf(random)]
+            }
+            else -> R.drawable.ic_dice_box
         }
         img_roll.setImageResource(imageResources)
     }
-
-
 }

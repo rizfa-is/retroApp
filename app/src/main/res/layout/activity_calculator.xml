@@ -53,7 +53,6 @@
             android:layout_marginTop="32dp"
             android:gravity="end"
             android:padding="8dp"
-            android:text="@string/calc_result"
             android:textColor="@color/white"
             android:textSize="35sp"/>
 

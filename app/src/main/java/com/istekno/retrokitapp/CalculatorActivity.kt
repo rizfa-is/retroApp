@@ -1,12 +1,11 @@
 package com.istekno.retrokitapp
 
-import android.util.Log
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_calculator.*
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.lang.Exception
-import kotlin.math.sqrt
 
 class CalculatorActivity : BaseActivity() {
 
@@ -63,12 +62,20 @@ class CalculatorActivity : BaseActivity() {
     }
 
     private fun actionGeneral(listButton: IntArray, listStr: Array<String>, view: View) {
+        val listNumber = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
         val index = listButton.indexOf(view.id)
         val str = listStr[index]
         var isClear = false
-        if (str == "") isClear = true
+        if(str == "") isClear = true
 
-        appendCalc(str, isClear)
+        if (tv_calc_result.text.isEmpty()) {
+            appendCalc(str, isClear)
+        } else if (!tv_calc_result.text.isEmpty() && listNumber.contains(str)) {
+            appendCalc(str, true)
+        } else {
+            appendCalc("", true)
+            appendCalc(str, isClear)
+        }
     }
 
     private fun actionBackListener() {
@@ -78,26 +85,31 @@ class CalculatorActivity : BaseActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun actionEqualsListener() {
         try {
-            val expression = ExpressionBuilder(tv_calc_calculation.text.toString()).build()
-            val result = expression.evaluate()
-            val longResult = result.toLong()
-            if (result == longResult.toDouble()) {
-                tv_calc_result.text = "= $longResult"
+            val expression = ExpressionBuilder(tv_calc_calculation.text.toString()).build().evaluate()
+            val longResult = expression.toLong()
+            if (expression == longResult.toDouble()) {
+                tv_calc_result.text = "$longResult"
             } else {
-                tv_calc_result.text = result.toString()
+                tv_calc_result.text = expression.toString()
             }
         } catch (e: Exception) {
             Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
-            Log.d("EXCEPTION", "Message: ${e.message}")
         }
     }
 
     private fun appendCalc(string: String, isClear: Boolean) {
         if (isClear) {
-            tv_calc_calculation.text = ""
-            tv_calc_result.text = "= "
+            val listNumber = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
+
+            if (!tv_calc_result.text.isEmpty() && !listNumber.contains(string)) {
+                tv_calc_calculation.text = tv_calc_result.text
+                tv_calc_result.text = ""
+            } else {
+                tv_calc_calculation.text = ""
+            }
         } else {
             tv_calc_calculation.append(string)
         }
