@@ -17,63 +17,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_calc_calculation"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_calc_calculation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_calc" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_calc" >
 
-    <TextView
-        android:id="@+id/tv_calc_result"
+        <TextView
+            android:id="@+id/tv_calc_calculation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:gravity="end"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textSize="35sp"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_calc_result"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:textSize="45sp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_calc_calculation" />
+        app:layout_constraintTop_toBottomOf="@+id/sv_calc_calculation" >
+
+        <TextView
+            android:id="@+id/tv_calc_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="@string/calc_result"
+            android:textColor="@color/white"
+            android:textSize="35sp"/>
+
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:layout_weight="1"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_calc_result">
+        app:layout_constraintTop_toBottomOf="@+id/sv_calc_result">
 
         <TextView
             android:id="@+id/clear"
             style="@style/ActionButtonStyle"
-            android:text="CE" />
-
+            android:text="@string/clear"
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/startBracket"
+            android:id="@+id/openBracket"
             style="@style/ActionButtonStyle"
-            android:text="(" />
-
+            android:text="@string/openBracket" />
 
         <TextView
             android:id="@+id/closeBracket"
             style="@style/ActionButtonStyle"
-            android:text=")" />
-
+            android:text="@string/closeBracket" />
 
         <TextView
             android:id="@+id/actionDivide"
             style="@style/ActionButtonStyle"
-            android:text="/" />
+            android:text="@string/divided" />
 
     </LinearLayout>
 
@@ -81,35 +97,33 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
-        <TextView
-            android:id="@+id/mathPow"
-            style="@style/NumberButtonStyle"
-            android:text="7" />
-
-
-        <TextView
-            android:id="@+id/leftBracket"
-            style="@style/NumberButtonStyle"
-            android:text="8" />
-
+        <ImageView
+            android:id="@+id/actionSquareRoot"
+            style="@style/ActionButtonStyle"
+            android:padding="20dp"
+            android:src="@drawable/ic_square_root"
+            android:contentDescription="@string/square_root" />
 
         <TextView
-            android:id="@+id/rightBracket"
-            style="@style/NumberButtonStyle"
-            android:text="9" />
+            android:id="@+id/actionModulo"
+            style="@style/ActionButtonStyle"
+            android:text="@string/modulo" />
 
+        <TextView
+            android:id="@+id/actionQuadratic"
+            style="@style/ActionButtonStyle"
+            android:text="@string/quadratic" />
 
         <TextView
             android:id="@+id/actionMultiply"
             style="@style/ActionButtonStyle"
-            android:text="*" />
+            android:text="@string/multiply" />
 
     </LinearLayout>
 
@@ -117,9 +131,8 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintBottom_toTopOf="@+id/num5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -127,91 +140,49 @@
         <TextView
             android:id="@+id/num7"
             style="@style/NumberButtonStyle"
-            android:text="7" />
-
+            android:text="@string/_7" />
 
         <TextView
             android:id="@+id/num8"
             style="@style/NumberButtonStyle"
-            android:text="8" />
-
+            android:text="@string/_8" />
 
         <TextView
             android:id="@+id/num9"
             style="@style/NumberButtonStyle"
-            android:text="9" />
-
+            android:text="@string/_9" />
 
         <TextView
             android:id="@+id/actionPlus"
             style="@style/ActionButtonStyle"
-            android:text="+" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-        <TextView
-            android:id="@+id/num4"
-            style="@style/NumberButtonStyle"
-            android:text="4" />
-
-
-        <TextView
-            android:id="@+id/num5"
-            style="@style/NumberButtonStyle"
-            android:text="5" />
-
-
-        <TextView
-            android:id="@+id/num6"
-            style="@style/NumberButtonStyle"
-            android:text="6" />
-
-
-        <TextView
-            android:id="@+id/actionMinus"
-            style="@style/ActionButtonStyle"
-            android:text="-" />
+            android:text="@string/plus" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toStartOf="@+id/actionEquals"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/num5">
 
         <TextView
             android:id="@+id/num1"
             style="@style/NumberButtonStyle"
-            android:text="1" />
-
+            android:text="@string/_1" />
 
         <TextView
             android:id="@+id/num2"
             style="@style/NumberButtonStyle"
-            android:text="2" />
-
+            android:text="@string/_2" />
 
         <TextView
             android:id="@+id/num3"
             style="@style/NumberButtonStyle"
-            android:text="3" />
+            android:text="@string/_3" />
 
     </LinearLayout>
 
@@ -219,7 +190,6 @@
         android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/actionEquals"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -229,35 +199,66 @@
         <TextView
             android:id="@+id/numDot"
             style="@style/NumberButtonStyle"
-            android:text="." />
-
+            android:text="@string/point" />
 
         <TextView
             android:id="@+id/num0"
             style="@style/NumberButtonStyle"
-            android:text="0" />
+            android:text="@string/_0" />
 
-
-        <TextView
+        <ImageView
             android:id="@+id/actionBack"
             style="@style/NumberButtonStyle"
-            android:text="Back" />
+            android:padding="20dp"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/backspace" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/num4"
+        style="@style/NumberButtonStyle2"
+        android:text="@string/_4"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout5"
+        app:layout_constraintEnd_toStartOf="@id/num5"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/num5"
+        style="@style/NumberButtonStyle2"
+        android:text="@string/_5"
+        app:layout_constraintEnd_toStartOf="@id/num6"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout5"
+        app:layout_constraintStart_toEndOf="@+id/num4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/num6"
+        style="@style/NumberButtonStyle2"
+        android:text="@string/_6"
+        app:layout_constraintEnd_toStartOf="@id/actionMinus"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout5"
+        app:layout_constraintStart_toEndOf="@+id/num5"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"/>
+
+    <TextView
+        android:id="@+id/actionMinus"
+        style="@style/ActionButtonStyle2"
+        android:text="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/num6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/num6"
+        app:layout_constraintTop_toTopOf="@+id/num6" />
+
+    <TextView
         android:id="@+id/actionEquals"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/theme_yellow"
-        android:gravity="center"
-        android:text="="
-        android:textColor="@color/white"
-        android:textSize="25sp"
+        style="@style/ActionButtonStyle2"
+        android:text="@string/equals"
+        android:background="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
-        app:layout_constraintEnd_toEndOf="@id/linearLayout4"
-        app:layout_constraintStart_toEndOf="@id/linearLayout5"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/num6"
+        app:layout_constraintEnd_toEndOf="@id/actionMinus"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
