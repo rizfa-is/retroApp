@@ -109,6 +109,8 @@ class CalculatorActivity : BaseActivity() {
                 tv_calc_result.text = ""
             } else {
                 tv_calc_calculation.text = ""
+                tv_calc_result.text = ""
+                tv_calc_calculation.append(string)
             }
         } else {
             tv_calc_calculation.append(string)
