@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_retro_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RetroKitApp">
-        <activity android:name=".CalculatorActivity"></activity>
-        <activity android:name=".RollDiceActivity" />
-        <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".view.CalculatorActivity"></activity>
+        <activity android:name=".view.RollDiceActivity" />
+        <activity android:name=".view.HomeScreenActivity" />
+        <activity android:name=".view.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

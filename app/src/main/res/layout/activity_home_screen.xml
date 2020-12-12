@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme_blue"
-    tools:context=".HomeScreenActivity">
+    tools:context=".view.HomeScreenActivity">
 
     <TextView
         android:id="@+id/tv_home"
@@ -27,6 +27,7 @@
         android:elevation="2dp"
         android:padding="16dp"
         android:src="@drawable/ic_dice"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/img_home_calculator"
         app:layout_constraintStart_toStartOf="@+id/tv_home"
         app:layout_constraintTop_toBottomOf="@+id/tv_home" />
@@ -37,6 +38,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/roll_dice"
         android:textSize="20sp"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="@+id/img_home_dice"
         app:layout_constraintStart_toStartOf="@+id/img_home_dice"
         app:layout_constraintTop_toBottomOf="@+id/img_home_dice" />
@@ -50,6 +52,7 @@
         android:elevation="2dp"
         android:padding="16dp"
         android:src="@drawable/ic_calculator"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="@+id/img_home_dice"
         app:layout_constraintEnd_toEndOf="@+id/tv_home"
         app:layout_constraintStart_toEndOf="@+id/img_home_dice" />
@@ -60,6 +63,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/calculator"
         android:textSize="20sp"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="@+id/img_home_calculator"
         app:layout_constraintStart_toStartOf="@+id/img_home_calculator"
         app:layout_constraintTop_toBottomOf="@+id/img_home_calculator" />

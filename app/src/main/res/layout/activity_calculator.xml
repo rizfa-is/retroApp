@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme_blue"
-    tools:context=".CalculatorActivity">
+    tools:context=".view.CalculatorActivity">
 
     <TextView
         android:id="@+id/tv_calc"
@@ -73,22 +73,26 @@
             android:id="@+id/clear"
             style="@style/ActionButtonStyle"
             android:text="@string/clear"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/openBracket"
             style="@style/ActionButtonStyle"
-            android:text="@string/openBracket" />
+            android:text="@string/openBracket"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/closeBracket"
             style="@style/ActionButtonStyle"
-            android:text="@string/closeBracket" />
+            android:text="@string/closeBracket"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/actionDivide"
             style="@style/ActionButtonStyle"
-            android:text="@string/divided" />
+            android:text="@string/divided"
+            android:onClick="onClick"/>
 
     </LinearLayout>
 
@@ -107,22 +111,26 @@
             style="@style/ActionButtonStyle"
             android:padding="20dp"
             android:src="@drawable/ic_square_root"
-            android:contentDescription="@string/square_root" />
+            android:contentDescription="@string/square_root"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/actionModulo"
             style="@style/ActionButtonStyle"
-            android:text="@string/modulo" />
+            android:text="@string/modulo"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/actionQuadratic"
             style="@style/ActionButtonStyle"
-            android:text="@string/quadratic" />
+            android:text="@string/quadratic"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/actionMultiply"
             style="@style/ActionButtonStyle"
-            android:text="@string/multiply" />
+            android:text="@string/multiply"
+            android:onClick="onClick"/>
 
     </LinearLayout>
 
@@ -139,22 +147,26 @@
         <TextView
             android:id="@+id/num7"
             style="@style/NumberButtonStyle"
-            android:text="@string/_7" />
+            android:text="@string/_7"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/num8"
             style="@style/NumberButtonStyle"
-            android:text="@string/_8" />
+            android:text="@string/_8"
+            android:onClick="onClick" />
 
         <TextView
             android:id="@+id/num9"
             style="@style/NumberButtonStyle"
-            android:text="@string/_9" />
+            android:text="@string/_9"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/actionPlus"
             style="@style/ActionButtonStyle"
-            android:text="@string/plus" />
+            android:text="@string/plus"
+            android:onClick="onClick"/>
 
     </LinearLayout>
 
@@ -171,17 +183,20 @@
         <TextView
             android:id="@+id/num1"
             style="@style/NumberButtonStyle"
-            android:text="@string/_1" />
+            android:text="@string/_1"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/num2"
             style="@style/NumberButtonStyle"
-            android:text="@string/_2" />
+            android:text="@string/_2"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/num3"
             style="@style/NumberButtonStyle"
-            android:text="@string/_3" />
+            android:text="@string/_3"
+            android:onClick="onClick" />
 
     </LinearLayout>
 
@@ -198,19 +213,22 @@
         <TextView
             android:id="@+id/numDot"
             style="@style/NumberButtonStyle"
-            android:text="@string/point" />
+            android:text="@string/point"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/num0"
             style="@style/NumberButtonStyle"
-            android:text="@string/_0" />
+            android:text="@string/_0"
+            android:onClick="onClick"/>
 
         <ImageView
             android:id="@+id/actionBack"
             style="@style/NumberButtonStyle"
             android:padding="20dp"
             android:src="@drawable/ic_delete"
-            android:contentDescription="@string/backspace" />
+            android:contentDescription="@string/backspace"
+            android:onClick="onClick" />
 
     </LinearLayout>
 
@@ -218,6 +236,7 @@
         android:id="@+id/num4"
         style="@style/NumberButtonStyle2"
         android:text="@string/_4"
+        android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@id/linearLayout5"
         app:layout_constraintEnd_toStartOf="@id/num5"
         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
@@ -227,6 +246,7 @@
         android:id="@+id/num5"
         style="@style/NumberButtonStyle2"
         android:text="@string/_5"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@id/num6"
         app:layout_constraintBottom_toTopOf="@id/linearLayout5"
         app:layout_constraintStart_toEndOf="@+id/num4"
@@ -236,6 +256,7 @@
         android:id="@+id/num6"
         style="@style/NumberButtonStyle2"
         android:text="@string/_6"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@id/actionMinus"
         app:layout_constraintBottom_toTopOf="@id/linearLayout5"
         app:layout_constraintStart_toEndOf="@+id/num5"
@@ -245,6 +266,7 @@
         android:id="@+id/actionMinus"
         style="@style/ActionButtonStyle2"
         android:text="@string/minus"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="@id/num6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/num6"
@@ -254,6 +276,7 @@
         android:id="@+id/actionEquals"
         style="@style/ActionButtonStyle2"
         android:text="@string/equals"
+        android:onClick="onClick"
         android:background="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
         app:layout_constraintStart_toEndOf="@+id/num6"

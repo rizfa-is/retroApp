@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme_blue"
-    tools:context=".RollDiceActivity">
+    tools:context=".view.RollDiceActivity">
 
     <TextView
         android:id="@+id/tv_roll"
@@ -38,6 +38,7 @@
         android:elevation="4dp"
         android:text="@string/roll"
         android:textColor="@color/black"
+        android:onClick="onClick"
         android:backgroundTint="@color/theme_yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
