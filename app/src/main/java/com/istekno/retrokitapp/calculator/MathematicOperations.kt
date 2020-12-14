@@ -3,11 +3,11 @@ package com.istekno.retrokitapp.calculator
 import android.view.View
 import android.widget.TextView
 
-open class MathematicOperations {
+class MathematicOperations {
 
     private val listNumber = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
 
-    fun appendCalc(tvCalculate: TextView, tvResult: TextView, string: String, isClear: Boolean) {
+    private fun appendCalc(tvCalculate: TextView, tvResult: TextView, string: String, isClear: Boolean) {
         if (isClear) {
             if (!tvResult.text.isEmpty() && !listNumber.contains(string)) {
                 tvCalculate.text = tvResult.text
@@ -22,7 +22,7 @@ open class MathematicOperations {
         }
     }
 
-    fun actionGeneral(listButton: IntArray, listStr: Array<String>, view: View, tvCalculate: TextView, tvResult: TextView) {
+    private fun actionGeneral(listButton: IntArray, listStr: Array<String>, view: View, tvCalculate: TextView, tvResult: TextView) {
         val index = listButton.indexOf(view.id)
         val str = listStr[index]
         val isClear = str == ""
@@ -36,4 +36,6 @@ open class MathematicOperations {
             appendCalc(tvCalculate, tvResult, str, isClear)
         }
     }
+
+    fun getActionGeneral(listButton: IntArray, listStr: Array<String>, view: View, tvCalculate: TextView, tvResult: TextView) = actionGeneral(listButton, listStr, view, tvCalculate, tvResult)
 }

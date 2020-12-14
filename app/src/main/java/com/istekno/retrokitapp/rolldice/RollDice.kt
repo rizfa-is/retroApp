@@ -9,7 +9,7 @@ import android.os.Looper
 
 class RollDice {
 
-    fun rollDice(img_roll: ImageView, context: Context) {
+    private fun rollDice(img_roll: ImageView, context: Context) {
         val listNumber = intArrayOf(1, 2, 3, 4, 5, 6)
         val listDice = intArrayOf(R.drawable.img_dice_1, R.drawable.img_dice_2, R.drawable.img_dice_3, R.drawable.img_dice_4, R.drawable.img_dice_5, R.drawable.img_dice_6)
 
@@ -25,4 +25,6 @@ class RollDice {
             else -> img_roll.setImageResource(R.drawable.ic_dice_box)
         }
     }
+
+    fun getRollDice(img_roll: ImageView, context: Context) = rollDice(img_roll, context)
 }

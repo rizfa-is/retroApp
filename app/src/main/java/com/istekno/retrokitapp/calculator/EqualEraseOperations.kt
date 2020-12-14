@@ -9,7 +9,7 @@ import java.lang.Exception
 
 abstract class EqualEraseOperations {
 
-    fun actionEqualsListener(tvCalculate: TextView, tvResult: TextView, context: Context) {
+    private fun actionEqualsListener(tvCalculate: TextView, tvResult: TextView, context: Context) {
         try {
             val expression = ExpressionBuilder(tvCalculate.text.toString()).build().evaluate()
             val longResult = expression.toLong()
@@ -22,6 +22,8 @@ abstract class EqualEraseOperations {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun getActionEqualListener(tvCalculate: TextView, tvResult: TextView, context: Context) = actionEqualsListener(tvCalculate, tvResult, context)
 
     abstract fun actionBackListener(tvCalculate: TextView)
 }

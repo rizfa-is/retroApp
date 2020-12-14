@@ -10,7 +10,7 @@ import com.istekno.retrokitapp.calculator.EqualEraseOperations
 import com.istekno.retrokitapp.calculator.MathematicOperations
 import com.istekno.retrokitapp.rolldice.RollDice
 
-open class OnClickActivity : EqualEraseOperations() {
+class OnClickActivity : EqualEraseOperations() {
 
     private fun onCLickHome(context: Context, v: View) {
         val listButton = intArrayOf(R.id.img_home_dice, R.id.tv_home_dice, R.id.img_home_calculator, R.id.tv_home_calculator)
@@ -27,7 +27,7 @@ open class OnClickActivity : EqualEraseOperations() {
 
     private fun onClickRollDice(v: View, imageView: ImageView, context: Context) {
         val rollDice = RollDice()
-        if (v.id == R.id.btn_roll) rollDice.rollDice(imageView, context)
+        if (v.id == R.id.btn_roll) rollDice.getRollDice(imageView, context)
     }
 
     private fun onClickCalculator(context: Context, v: View, tvCalculate: TextView, tvResult: TextView) {
@@ -42,10 +42,10 @@ open class OnClickActivity : EqualEraseOperations() {
 
         when (v.id) {
             in listButton -> {
-                mathematicOperations.actionGeneral(listButton, listStr, v, tvCalculate, tvResult)
+                mathematicOperations.getActionGeneral(listButton, listStr, v, tvCalculate, tvResult)
             }
             in listButton2 -> {
-                if (v.id == listButton2[0]) actionBackListener(tvCalculate) else actionEqualsListener(tvCalculate, tvResult, context)
+                if (v.id == listButton2[0]) actionBackListener(tvCalculate) else getActionEqualListener(tvCalculate, tvResult, context)
             }
         }
     }
