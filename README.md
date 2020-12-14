@@ -3,6 +3,12 @@
 
 Retro App contain two simple playable app, simple calculator and roll dice.
 
+## Built With
+
+[![exp4j](https://img.shields.io/badge/exp4j-v.0.4.8-red?style=rounded-square)](https://www.objecthunter.net/exp4j/)
+
+## Description
+
 Simple calculator with common operator such as basic mathematic, square root and quadratic.
 
 Roll dice is random dice genetor customize with roll animation
