@@ -11,8 +11,7 @@ Contains no ads or unnecessary permissions. It is fully opensource, and add cust
 
 This app is just one piece of a bigger series of apps. So check this repository regularly for new update.
 
-<a href='https://play.google.com/store/apps/details?id=com.simplemobiletools.calculator'><img src='https://simplemobiletools.com/assets/images/google-play.png' alt='Get it on Google Play' height=45/></a>
-<a href='https://f-droid.org/packages/com.simplemobiletools.calculator'><img src='https://simplemobiletools.com/assets/images/f-droid.png' alt='Get it on F-Droid' height=45 ></a>
+<a href='https://f-droid.org/packages/com.simplemobiletools.calculator'><img src='https://github.com/rizfa-is/myPict/blob/master/574-5743660_logo-google-drive-png-transparent-png.png' alt='Get it on Google Drive' height=45 ></a>
 
 <div style="display:flex;">
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_1.jpg" width="30%">
