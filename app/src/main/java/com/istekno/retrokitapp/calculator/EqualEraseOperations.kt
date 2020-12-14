@@ -13,9 +13,6 @@ abstract class EqualEraseOperations {
         try {
             val expression = ExpressionBuilder(tvCalculate.text.toString()).build().evaluate()
             val longResult = expression.toLong()
-            Log.d("longResult : ", longResult.toString() )
-            Log.d("expression : ", expression.toString() )
-            Log.d("longResult.toDouble() : ", longResult.toDouble().toString() )
             if (expression == longResult.toDouble()) {
                 tvResult.text = "$longResult"
             } else {

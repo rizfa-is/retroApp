@@ -8,10 +8,8 @@ import com.istekno.retrokitapp.R
 
 class SplashScreenActivity() : BaseActivity() {
 
-    private lateinit var baseActivity: BaseActivity
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        baseActivity = this
+        val baseActivity = this
         baseActivity.view = R.layout.activity_splash_screen
         super.onCreate(savedInstanceState)
 

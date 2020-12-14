@@ -12,9 +12,6 @@ import com.istekno.retrokitapp.rolldice.RollDice
 
 open class OnClickActivity : EqualEraseOperations() {
 
-    private lateinit var rollDice: RollDice
-    private lateinit var mathematicOperations: MathematicOperations
-
     private fun onCLickHome(context: Context, v: View) {
         val listButton = intArrayOf(R.id.img_home_dice, R.id.tv_home_dice, R.id.img_home_calculator, R.id.tv_home_calculator)
         val listClass = arrayOf(RollDiceActivity::class.java, CalculatorActivity::class.java)
@@ -29,11 +26,12 @@ open class OnClickActivity : EqualEraseOperations() {
     }
 
     private fun onClickRollDice(v: View, imageView: ImageView, context: Context) {
-        rollDice = RollDice()
+        val rollDice = RollDice()
         if (v.id == R.id.btn_roll) rollDice.rollDice(imageView, context)
     }
 
     private fun onClickCalculator(context: Context, v: View, tvCalculate: TextView, tvResult: TextView) {
+        val mathematicOperations = MathematicOperations()
         val listStr = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "", "(", ")", "/", "*", "-", "+", "%", "^", "sqrt(")
         val listButton = intArrayOf(
                 R.id.num0, R.id.num1, R.id.num2, R.id.num3, R.id.num4,
@@ -41,7 +39,6 @@ open class OnClickActivity : EqualEraseOperations() {
                 R.id.numDot, R.id.clear, R.id.openBracket, R.id.closeBracket, R.id.actionDivide,
                 R.id.actionMultiply, R.id.actionMinus, R.id.actionPlus, R.id.actionModulo, R.id.actionQuadratic, R.id.actionSquareRoot)
         val listButton2 = arrayOf(R.id.actionBack, R.id.actionEquals)
-        mathematicOperations = MathematicOperations()
 
         when (v.id) {
             in listButton -> {
@@ -60,15 +57,15 @@ open class OnClickActivity : EqualEraseOperations() {
         }
     }
 
-    fun getOnCLickHome(context: Context, v: View) {
+    fun getOnCLick(context: Context, v: View) {
         return onCLickHome(context, v)
     }
 
-    fun getOnCLickDice( v: View, imageView: ImageView, context: Context) {
+    fun getOnCLick(context: Context, v: View, imageView: ImageView) {
         return onClickRollDice(v, imageView, context)
     }
 
-    fun getOnCLickCalculator(context: Context, v: View, tvCalculate: TextView, tvResult: TextView) {
+    fun getOnCLick(context: Context, v: View, tvCalculate: TextView, tvResult: TextView) {
         return onClickCalculator(context, v, tvCalculate, tvResult)
     }
 }

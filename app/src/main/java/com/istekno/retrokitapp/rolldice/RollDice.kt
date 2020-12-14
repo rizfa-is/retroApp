@@ -12,9 +12,8 @@ class RollDice {
     fun rollDice(img_roll: ImageView, context: Context) {
         val listNumber = intArrayOf(1, 2, 3, 4, 5, 6)
         val listDice = intArrayOf(R.drawable.img_dice_1, R.drawable.img_dice_2, R.drawable.img_dice_3, R.drawable.img_dice_4, R.drawable.img_dice_5, R.drawable.img_dice_6)
-        val random = (1..6).random()
 
-        when (random) {
+        when (val random = (1..6).random()) {
             in listNumber -> {
                 Glide.with(context).load(R.drawable.animate_dice).into(img_roll)
                 Handler(Looper.getMainLooper()).postDelayed(
