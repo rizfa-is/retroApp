@@ -1,5 +1,5 @@
 # Retro App
-<img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
+<img alt="Logo" src="https://github.com/rizfa-is/myPict/blob/master/retroappicon%404x.png" width="120" />
 
 Retro App contain two simple playable app, simple calculator and roll dice.
 
