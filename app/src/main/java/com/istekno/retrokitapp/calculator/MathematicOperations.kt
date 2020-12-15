@@ -6,6 +6,7 @@ import android.widget.TextView
 class MathematicOperations {
 
     private val listNumber = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".")
+    private val listOperator = arrayOf(".", "(", ")", "/", "*", "-", "+", "%", "^", "sqrt(")
 
     private fun appendCalc(tvCalculate: TextView, tvResult: TextView, string: String, isClear: Boolean) {
         if (isClear) {
@@ -18,7 +19,17 @@ class MathematicOperations {
                 tvCalculate.append(string)
             }
         } else {
-            tvCalculate.append(string)
+            val listCalculate = tvCalculate.text.toList()
+            if (listCalculate.isNotEmpty()) {
+                val str = listCalculate[listCalculate.size - 1].toString()
+                if (str == string) {
+                    if (!listOperator.contains(string)) tvCalculate.append(string)
+                } else if (str != string) {
+                    if (!listOperator.contains(str) || listNumber.contains(string)) tvCalculate.append(string)
+                }
+            } else {
+                tvCalculate.append(string)
+            }
         }
     }
 
