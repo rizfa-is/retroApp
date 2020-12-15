@@ -1,4 +1,4 @@
-package com.istekno.retrokitapp.view
+package com.istekno.retrokitapp.helpers
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,8 @@ import com.istekno.retrokitapp.R
 import com.istekno.retrokitapp.calculator.EqualEraseOperations
 import com.istekno.retrokitapp.calculator.MathematicOperations
 import com.istekno.retrokitapp.rolldice.RollDice
+import com.istekno.retrokitapp.view.CalculatorActivity
+import com.istekno.retrokitapp.view.RollDiceActivity
 
 class OnClickActivity : EqualEraseOperations() {
 

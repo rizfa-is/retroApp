@@ -3,6 +3,7 @@ package com.istekno.retrokitapp.view
 import android.os.Bundle
 import android.view.View
 import com.istekno.retrokitapp.R
+import com.istekno.retrokitapp.helpers.OnClickActivity
 
 class HomeScreenActivity : BaseActivity() {
 
